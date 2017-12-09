@@ -8,6 +8,7 @@ var Bird = ns.Bird = Hilo.Class.create({
 
         this.addFrame(properties.atlas.getSprite('bird'));
         this.interval = 6;
+        // 小鸟的宽度和高度分别为86和60，故pivotX和pivotY即为43和30
         this.pivotX = 43;
         this.pivotY = 30;
 
@@ -47,6 +48,9 @@ var Bird = ns.Bird = Hilo.Class.create({
         if(this.tween) this.tween.stop();
     },
 
+    /**
+     * Hilo的可视对象View提供了一个onUpdate方法属性，此方法会在可视对象每次渲染之前调用
+     */
     onUpdate: function(){
         if(this.isDead) return;
 
